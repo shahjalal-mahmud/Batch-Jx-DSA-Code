@@ -1,3 +1,5 @@
+// You can just skip the 'front' node
+// Here is the code for without any 'front'
 #include <iostream>
 using namespace std;
 
@@ -13,20 +15,16 @@ public:
 class Queue{
 public:
     Node *rear;
-    Node *front; // you can skip this line and follow Problem18 code
     Queue(){
         rear = nullptr;
     }
+    // Same as the insertion at head in single linked list
     void Push(int data){
         Node *newNode = new Node(data);
-        if (rear == nullptr)
-        {
-            rear = front = newNode;
-            return;
-        }
         newNode->next = rear;
         rear = newNode;
     }
+    // Same as the deletion at end in single linked list
     void Pop(){
         Node *t1 = rear;
         Node *t2 = rear->next;
